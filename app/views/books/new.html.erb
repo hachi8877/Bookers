@@ -1,0 +1,27 @@
+<h1>Books</h1>
+<div class="list-wrap">
+<% @books && @books.each do |book| %>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <div class="list-box">
+    <div class="list-comment">
+      <span class="list-title"><%= list.title %></span>
+      <span class="list-body"><%= list.body %></span>
+    </div>
+  </div>
+<% end %>
+</div>
+<h1>New book</h1>
+<!-- form_with部分 -->
+<%= form_with model: @book, url:'/books', local:true do |f| %>
+  <h4>Title</h4>
+  <%= f.text_field :title %>
+  <h4>Body</h4>
+  <%= f.text_area :body %>
+  <%= f.submit 'Create Book' %>
+<% end %>

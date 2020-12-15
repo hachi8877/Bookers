@@ -1,0 +1,18 @@
+<% if @notice %>
+  <p id="notice" class="notice"><%= @notice %></p>
+<% end %>
+<% if @error %>
+  <p id="error" class="error"><%= @error %></p>
+<% end %>
+<p>
+  <strong>Title:</strong>
+  <%= @book.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @book.body %>
+</p>
+
+<%= link_to "edit", edit_book_path(@book.id) %>
+<a class="back" href="/books">Back</a>
