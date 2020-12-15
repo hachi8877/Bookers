@@ -27,10 +27,8 @@
   <% end %>
 </table>
 </div>
-<div style=”color:blue;  font-size:20px;”>
+<div style=”color:blue;  font-size:10px;”>
 <h2>New book</h2>
-<!-- form_with部分 -->
-<!--div style="height: 10px;"-->
 <%= form_with model: @book, url:'/books', local:true do |f| %>
   <div>
     <% if @book.errors.any? %>
@@ -45,7 +43,6 @@
     <% end %>
   </div>
 
-  <!--label for="book_title" style="display: block;">Title</label-->
   <label for="book_title" >Title</label>
   <%= f.text_field :title %>
   <label for="book_body" >Body</label>
